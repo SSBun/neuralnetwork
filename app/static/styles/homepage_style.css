@@ -1,0 +1,49 @@
+.nav {
+    background-color: lightblue;
+    font-size: 30px;
+    font-family: "PingFang SC";
+    color: white;
+    text-align: center;
+    margin: auto;
+}
+
+.section_neural {
+    margin: 20px 0 0 20px;
+}
+
+.neural_list {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #fafafa;
+}
+
+.neural_item {
+    height: 80px;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: orange;
+}
+
+.neural_item > * {
+    display: inline-block;
+}
+
+.neural_item > .title {
+    margin-left: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.neural_item > .rate {
+    height: 80px;
+    line-height: 80px;
+    width: 50px;
+    float: right;
+    font-size: 30px;
+    margin-right: 20px;
+    color: red;
+}
+
+

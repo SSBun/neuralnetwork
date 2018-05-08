@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neural Network Homepage</title>
+    <script type="text/javascript" src="/static/lib/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/clear.css') }}" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/homepage_style.css') }}" charset="UTF-8">
+</head>
+<body>
+<div class="nav">
+    <div>手写识别数字神经网络</div>
+</div>
+
+
+<h1 class="section_neural">神经网络列表</h1>
+<div class="neural_list">
+   <div class="neural_item">
+       <div class="title">一号神经网络</div>
+       <div class="rate">0.98</div>
+   </div>
+    <div class="neural_item">
+        <div class="title">一号神经网络</div>
+        <div class="rate">0.98</div>
+    </div>
+    <div class="neural_item">
+        <div class="title">一号神经网络</div>
+        <div class="rate">0.98</div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        function getNeuralList() {
+            $.ajax({url: "neural_list", dataType: "json", success: function (data, type) {
+                console.log(data["data"]);
+                $(".neural_list").empty();
+                for (value in data["data"]["list"]) {
+                    console.log(value);
+                    var row = $("<div class='neural_item'></div>");
+                    $(".neural_list").append(row);
+                }
+            }})
+        }
+        getNeuralList();
+
+    })
+</script>
+</html>
